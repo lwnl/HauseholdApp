@@ -16,5 +16,3 @@ const HOST = '';
 export default HOST
 
 
-基本lebensmitteltype对所有用户可见
-让用户可以创建自己的lebensmitteltype，但是只有该lebensmitteltype只有该用户可见，对其他用户不可见
