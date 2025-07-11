@@ -1,0 +1,57 @@
+name: Run testSeed.ts
+
+
+on:
+  push:
+    branches:
+      - liang_deployment 
+      - non_existent_branch
+  pull_request:
+    branches:
+      # - liang_deployment ## 临时注销这个test
+      - non_existent_branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # - name: 📥 Checkout Repository
+      #   uses: actions/checkout@v4
+
+      # - name: 🏗️ Setup Bun
+      #   uses: oven-sh/setup-bun@v1
+      #   with:
+      #     bun-version: latest
+
+      # - name: 🔧 Setup MongoDB
+      #   uses: supercharge/mongodb-github-action@1.10.0
+      #   with:
+      #     mongodb-version: "5.0"
+
+      # - name: 📦 Install Dependencies
+      #   run: |
+      #     cd Backend  
+      #     bun install
+
+      # - name: 🚀 Run seedDatabase.test.ts
+      #   env: 
+      #     MONGODB_URI: mongodb://localhost:27017/haushalt
+      #     JWT_SECRET: alms1234
+      #     PORT: 3000
+      #     BCRYPT_PASSWORT: password
+      #     TOKEN_EXPIRATION: 1h
+      #   run: |
+      #     cd Backend  
+      #     bun run test:seed
+
+      - name: 🚨 Trigger Webhook (if tests pass)
+        # if: success() # Dieser Schritt wird nur ausgelöst, wenn der Test erfolgreich ist
+        run: |
+          curl -X POST http://34.32.70.252:4100/webhook/haushalt \
+            -H "Content-Type: application/json" \
+            -d '{"status": "success", "message": "Tests passed. Webhook triggered!"}'
+            
+          curl -X POST http://18.199.110.149:4100/webhook/haushalt \
+            -H "Content-Type: application/json" \
+            -d '{"status": "success", "message": "Tests passed. Webhook triggered!"}'

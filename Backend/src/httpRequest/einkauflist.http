@@ -1,0 +1,17 @@
+### get all einkaiflist
+GET http://localhost:3000/einkauflist
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EwYzdjNmVhNmYzOWNmMGNhN2VhYmQiLCJpYXQiOjE3Mzg1OTI3MjQsImV4cCI6MTczODU5NjMyNH0.4xCkQYQkJmnxOmJKYUeIUzhaRMdDRjlKxz5BaV9G434; 
+
+### add an einkauflist
+POST http://localhost:3000/einkauflist
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EwYzdjNmVhNmYzOWNmMGNhN2VhYmQiLCJpYXQiOjE3Mzg1OTI3MjQsImV4cCI6MTczODU5NjMyNH0.4xCkQYQkJmnxOmJKYUeIUzhaRMdDRjlKxz5BaV9G434; 
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EyMTY1NDc4ZjFlYTgzZDUwNTEzM2MiLCJpYXQiOjE3Mzg2NzU4MDEsImV4cCI6MTczODY3OTQwMX0.GrUtuiPGwEE9srInceGS1sFRuChCAf-x84-aLy-iFC8;
+
+
+{
+  "einkaufliste": {
+    "liste": ["605c72ef8e2f8e1b2c8d03b0"]
+  }
+}
+

@@ -1,0 +1,43 @@
+
+### to test if backend is ready 
+GET http://localhost:3000/
+
+### to get all users
+GET http://localhost:3000/users
+
+### to register a new user
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "userName": "abc",
+  "email": "test@email.com",
+  "password": "password"
+}
+
+### login a user 
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "email": "test@email.com",
+  "password": "password"
+}
+
+### user logout
+GET http://localhost:3000/users/logout
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EyMjVkZmNjOTI3MGVhMzYzZTBlNGYiLCJpYXQiOjE3Mzg2Nzk3ODEsImV4cCI6MTczODY4MzM4MX0.tvby2RCHFspPY9gZ01rC6b4jxPGe_dgTwCDaC_CR-Ds; 
+
+### Benutzerinformationen aktualisieren
+PATCH http://localhost:3000/users/update
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EyMjVkZmNjOTI3MGVhMzYzZTBlNGYiLCJpYXQiOjE3Mzg2Nzk3ODEsImV4cCI6MTczODY4MzM4MX0.tvby2RCHFspPY9gZ01rC6b4jxPGe_dgTwCDaC_CR-Ds; 
+Content-Type: application/json
+
+{
+  "userName": "test-2",
+  "email": "test-2@email.com",
+  "password": "password-2"
+}
+
+
+

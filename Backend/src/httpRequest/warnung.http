@@ -1,0 +1,17 @@
+### get all warnungs
+GET http://localhost:3000/warnung
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EyMjVkZmNjOTI3MGVhMzYzZTBlNGYiLCJpYXQiOjE3Mzg2Nzk3ODEsImV4cCI6MTczODY4MzM4MX0.tvby2RCHFspPY9gZ01rC6b4jxPGe_dgTwCDaC_CR-Ds; 
+
+### add a new warnung
+POST http://localhost:3000/warnung
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EyMjVkZmNjOTI3MGVhMzYzZTBlNGYiLCJpYXQiOjE3Mzg2Nzk3ODEsImV4cCI6MTczODY4MzM4MX0.tvby2RCHFspPY9gZ01rC6b4jxPGe_dgTwCDaC_CR-Ds; 
+
+{
+  "warnung": "neu Warnung 1"
+}
+
+### delete a warnung
+DELETE http://localhost:3000/warnung/67a2266ecc9270ea363e0e56
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EyMjVkZmNjOTI3MGVhMzYzZTBlNGYiLCJpYXQiOjE3Mzg2Nzk3ODEsImV4cCI6MTczODY4MzM4MX0.tvby2RCHFspPY9gZ01rC6b4jxPGe_dgTwCDaC_CR-Ds; 
