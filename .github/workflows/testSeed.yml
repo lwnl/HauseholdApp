@@ -52,6 +52,6 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{"status": "success", "message": "Tests passed. Webhook triggered!"}'
 
-          # curl -X POST http://34.32.96.247:4100/webhook/haushalt \
-          #   -H "Content-Type: application/json" \
-          #   -d '{"status": "success", "message": "Tests passed. Webhook triggered!"}'
+          curl -X POST http://34.32.96.247:4100/webhook/haushalt \
+            -H "Content-Type: application/json" \
+            -d '{"status": "success", "message": "Tests passed. Webhook triggered!"}'
