@@ -15,44 +15,41 @@ import Liste from "./pages/Kassenbuch/Kassenbuch_Page_Liste";
 import Neu from "./pages/Kassenbuch/Kassenbuch_Page_Neu";
 import Eingaenge from "./pages/Kassenbuch/Kassenbuch_Page_Eingaenge";
 import Ausgaenge from "./pages/Kassenbuch/Kassenbuch_Page_Ausgaenge";
-import { DarkModeProvider } from "./context/DarkModeContext";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <DarkModeProvider>
-        <Routes>
-          <Route path="/" element={<Hauptseite />} />
+      <Routes>
+        <Route path="/" element={<Hauptseite />} />
 
-          <Route path="/login" element={<Auth />} />
-          <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Auth />} />
+        <Route path="*" element={<NotFound />} />
 
-          {/* Navbar */}
-          <Route
-            element={
-              <TokenVerifizierung>
-                <Layout />
-              </TokenVerifizierung>
-            }
-          >
-            <Route path="/home" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/kassenbuch" element={<KassenbuchNavi />}>
-              <Route index element={<Liste />} />
-              <Route path="eingaenge" element={<Eingaenge />} />
-              <Route path="ausgaenge" element={<Ausgaenge />} />
-              <Route path="neu" element={<Neu />} />
-            </Route>
-            <Route path="/lebensmittel" element={<FoodManagement />} />
-            <Route path="/einkaufsliste" element={<Einkaufsliste />} />
-            <Route path="/einkaufliste" element={<Einkaufsliste />} />
-
-            <Route path="/einkaufliste/create" element={<CreateList />} />
+        {/* Navbar */}
+        <Route
+          element={
+            <TokenVerifizierung>
+              <Layout />
+            </TokenVerifizierung>
+          }
+        >
+          <Route path="/home" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/kassenbuch" element={<KassenbuchNavi />}>
+            <Route index element={<Liste />} />
+            <Route path="eingaenge" element={<Eingaenge />} />
+            <Route path="ausgaenge" element={<Ausgaenge />} />
+            <Route path="neu" element={<Neu />} />
           </Route>
-        </Routes>
-      </DarkModeProvider>
+          <Route path="/lebensmittel" element={<FoodManagement />} />
+          <Route path="/einkaufsliste" element={<Einkaufsliste />} />
+          <Route path="/einkaufliste" element={<Einkaufsliste />} />
+
+          <Route path="/einkaufliste/create" element={<CreateList />} />
+        </Route>
+      </Routes>
     </QueryClientProvider>
   );
 };

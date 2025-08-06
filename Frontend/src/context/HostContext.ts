@@ -1,3 +1,3 @@
-// const HOST = 'http://localhost:3200';
-const HOST = '';
+let HOST = '';
+// HOST = 'http://localhost:3200';
 export default HOST
